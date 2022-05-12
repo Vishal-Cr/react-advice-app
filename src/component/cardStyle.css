@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+
+.wholeCard {
+    border-radius: 10px;
+    background: hsl(217, 19%, 24%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    font-family: manrope;
+    position: relative;
+    width: 50vw;
+    height: auto;
+    transition: all 0.5s ease-in;
+
+}
+
+.advice_head_container {
+    color: hsl(150, 100%, 66%);
+    letter-spacing: 4px;
+    font-weight: 600;
+    height: 1.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.advice_body_container {
+    padding-bottom: 1rem;
+    margin: 0;
+    color: hsl(193, 38%, 86%);
+    font-size: 12px;
+    border-radius: 10px;
+    display: block;
+}
+
+
+
+
+
+.advice_body_container:after {
+    content: '';
+    position: absolute;
+    margin: -35px 0 0 -35px;
+    width: 90%;
+    height: 90%;
+    opacity: 0;
+}
+
+.advice_body_container:after {
+    left: 13%;
+    top: 20%;
+    background: rgba(82, 255, 168, 0.2);
+}
+
+.button-click {
+    animation: fadeIn 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1;
+}
+
+.advice_body_container.button-click:after {
+    transition: animation 1.5s ease;
+    animation: anim-effect-a 0.7s forwards;
+}
+
+
+@keyframes anim-effect-a {
+    0% {
+        -webkit-transform: scale3d(0.3, 0.3, 1);
+    }
+
+    25%,
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale3d(1.2, 1.2, 1);
+    }
+}
+
+.divider {
+    display: block;
+    width: 80%;
+    height: 2.5rem;
+    background: url('../assets/pattern-divider-desktop.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.diceIconContainer {
+    width: 50px;
+    height: 50px;
+    background: hsl(150, 100%, 66%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.diceIconContainer:hover {
+    box-shadow: 0 5px 15px hsl(150, 100%, 66%);
+}
+
+.diceIconContainer:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    bottom: 0;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px hsl(150, 100%, 66%);
+
+
+}
+
+.diceIconContainer:active:after {
+    box-shadow: 0 0 0 0 hsl(150, 100%, 66%);
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top: 0%;
+    opacity: 1;
+    transition: 0s;
+}
+
+.diceIconContainer.rotate {
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(-180deg);
+}
+
+
+button {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+button:active {
+    outline: none;
+}
+
+/*making the advice text bounce*/
+
+@keyframes fadeIn {
+
+
+
+    50%,
+    80%,
+    to {
+        transform: translateZ(-2px) translateY(5px)
+    }
+
+    40% {
+        transform: rotateY(180deg) translateZ(-2px) translateY(-35px)
+    }
+
+    60% {
+        transform: translateZ(-2px) translateY(-25px)
+    }
+}
